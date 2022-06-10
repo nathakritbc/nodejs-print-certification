@@ -2,11 +2,13 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
-  const { full_name, course_name, received_date } = req.query;
+  const { url_image, full_name, course_name, received_date } = req.query;
+  url_image.trim();
   full_name.trim();
   course_name.trim();
   course_name.trim();
   res.render("cert_pdf", {
+    url_image,
     full_name,
     course_name,
     received_date,
