@@ -3,6 +3,8 @@ const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   const { full_name, course_name } = req.query;
+  full_name.trim();
+  course_name.trim();
   res.render("cert_pdf", {
     full_name,
     course_name,
